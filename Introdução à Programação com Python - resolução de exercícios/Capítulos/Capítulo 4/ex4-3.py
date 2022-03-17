@@ -52,6 +52,8 @@ lista_num.append(float(input("Digite o primeiro número:\n>")))
 lista_num.append(float(input("Digite o segundo número:\n>")))
 lista_num.append(float(input("Digite o terceiro número:\n>")))
 
+lista_num.sort()
+
 menor = lista_num[0]
 maior = lista_num[len(lista_num) - 1]
 

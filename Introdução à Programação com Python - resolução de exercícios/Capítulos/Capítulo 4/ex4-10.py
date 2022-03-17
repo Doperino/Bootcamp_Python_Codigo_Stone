@@ -54,20 +54,20 @@ def calcula_preco(instalacao, qtd_kwh, dicionario_inst):
                 print(f"Preço de consumo: {preco_consumo}")
 
 
-tipo_inst = ['R', 'I', 'C']
-dicionario_inst = {'R': 'Residencial', 'I': 'Industrial', 'C': 'Comercial'}
+    tipo_inst = ['R', 'I', 'C']
+    dicionario_inst = {'R': 'Residencial', 'I': 'Industrial', 'C': 'Comercial'}
 
-print("Digite o seu tipo de instalação:")
-instalacao = input("R: residencial, I: Industrial e C: Comercial.\n>")
+    print("Digite o seu tipo de instalação:")
+    instalacao = input("R: residencial, I: Industrial e C: Comercial.\n>")
 
-while instalacao not in tipo_inst:
-    instalacao = input("Digite um termo válido:\n>")
+    while instalacao not in tipo_inst:
+        instalacao = input("Digite um termo válido:\n>")
 
-qtd_kwh = float(input("digite a quantidade de kWh consumida:\n>"))
+    qtd_kwh = float(input("digite a quantidade de kWh consumida:\n>"))
 
-while qtd_kwh <= 0:
-    qtd_kwh = input("Digite uma quantidade válida:\n>")
+    while qtd_kwh <= 0:
+        qtd_kwh = input("Digite uma quantidade válida:\n>")
 
-calcula_preco(instalacao, qtd_kwh, dicionario_inst)
+    calcula_preco(instalacao, qtd_kwh, dicionario_inst)
 
 

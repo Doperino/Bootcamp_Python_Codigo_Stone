@@ -4,6 +4,7 @@ Dada uma string qualquer, desenvolva um algoritmo que encontre o número de pare
 
 """
 import functools
+from itertools import permutations
 import string
 import math
 
@@ -13,6 +14,9 @@ alfabeto = list(string.ascii_lowercase)
 #Solicita uma palavra do usuário
 palavra = input("Digite a palavra escolhida:\n>")
 palavra = palavra.lower()
+
+#permutacoes_palavra = list(permutations(palavra))
+#print(permutacoes_palavra)
 
 #Cria uma lista de cada char da string palavra
 palavra_lista = list(palavra)
@@ -48,4 +52,19 @@ else:
 #Imprime o resultado
 print(f"A palavra {palavra} possui uma quantidade {qtd_anagramas:.0f} de anagramas.")
 
+"""
+#2º forma de fazer
+palavra = input("Digite a palavra escolhida:\n>")
+palavra = palavra.lower()
+permutacoes_palavra = list(permutations(palavra))
+
+for i in permutacoes_palavra:
+    if permutacoes_palavra.count(i) > 1:
+        permutacoes_palavra.remove(i)
+
+qtd_perm = len(permutacoes_palavra)
+
+
+print(f"A palavra {palavra} possui uma quantidade {qtd_perm} de anagramas.")
+"""
 

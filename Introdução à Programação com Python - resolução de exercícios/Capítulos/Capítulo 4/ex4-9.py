@@ -9,7 +9,7 @@ O valor da prestação mensal não pode ser superior a 30% do salário.
 Calcule o valor da prestação como sendo o valor da casa a comprar 
 dividido pelo número de meses a pagar.
 """
-
+ 
 valor_da_casa = float(input("Digite o valor da casa:\n>"))
 salario = float(input("Digite o valor do seu salário:\n>"))
 qtd_anos = float(input("Digite a quantidade de anos para pagar:\n>"))
