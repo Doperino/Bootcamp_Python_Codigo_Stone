@@ -21,11 +21,17 @@ def sorteia_cartelas(cart: dict) -> tuple[dict, int]:
     Returns:
         tuple[dict, int]: retorna um tuple com a cartela e o número de sorteios que foram realizados para identificar o ganhador
     """
+    sorteios = list()
     contagem_sorteios = 0
     while not verifica_ganhador(cart):
         letra_sorteada, numero_sorteado = sorteia()
+        while (letra_sorteada, numero_sorteado) in sorteios:
+            letra_sorteada, numero_sorteado = sorteia()
+
+        sorteios.append((letra_sorteada, numero_sorteado))
         cart = cartela.marca_cartela(cart, letra_sorteada, numero_sorteado)
         contagem_sorteios += 1
+        
     return cart, contagem_sorteios
 
 def verifica_ganhador(cartela: dict) -> bool:
@@ -43,7 +49,7 @@ def verifica_ganhador(cartela: dict) -> bool:
             return True
     for linha in range(5):
         lista = [lista[linha] for lista in cartela.values()]
-        if lista.count('XX') == len(coluna):
+        if lista.count('XX') == len(lista):
             #print("Ganhador!")
             return True
     return False

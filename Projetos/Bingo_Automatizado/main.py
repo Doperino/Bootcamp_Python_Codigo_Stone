@@ -36,28 +36,25 @@ import sorteio
 #Simula 1000 jogos e appenda em uma lista a quantidade de sorteios, necessária para identificador o ganhador, em cada uma das ocasiões
 lista_sorteios = list()
 numero_sorteios = int(input("Digite a quantidade de sorteios desejada:\n>"))
+
 while len(lista_sorteios) < numero_sorteios:
     #Gera cartela
-    cartela_1 = cartela.gera_cartela()
-    
-    #cartela.imprime(cartela_1)
+    cartela_gerada = cartela.gera_cartela()
     
     #Atribuição dinâmica. recebe a cartela_1 atualizada ganhadora e a contagem de sorteios necessários para tal
-    cartela_1, contagem_sorteios = sorteio.sorteia_cartelas(cartela_1)
+    cartela_gerada, contagem_sorteios = sorteio.sorteia_cartelas(cartela_gerada)
     
     #Appenda a lista a quantidade de sorteios, para ser utilizado posteriormente na identificação do mínimo, máximo e para a média
     lista_sorteios.append(contagem_sorteios)
     
-    #cartela.imprime(cartela_1)
 
 #Localiza o número mínimo, máximo e realizad a média de sorteios por jogo
 minimo_sorteios = min(lista_sorteios)
 maximo_sorteios = max(lista_sorteios)
-media_sorteios = sum(lista_sorteios) / numero_sorteios
+media_sorteios = sum(lista_sorteios) / len(lista_sorteios)
 
 #Print simples dos números adquiridos
 print(f"Quantidade de cartelas sorteadas: {numero_sorteios}")
 print(f"Quantidade mínima de sorteios para identificar um ganhador: {minimo_sorteios}")
 print(f"Quantidade máxima de sorteios para identificar um ganhador: {maximo_sorteios}")
-print(f"Média de sorteios por jogos: {media_sorteios}")
-
+print(f"Média de sorteios por jogos: {media_sorteios}") 
